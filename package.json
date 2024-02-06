@@ -6,7 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write src",
+    "prepare": "husky",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,jsx,tsx}": [
+      "prettier --write .",
+      "eslint --ext js,ts,jsx,tsx --fix"
+    ]
   },
   "dependencies": {
     "next": "14.1.0",
